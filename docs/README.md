@@ -10,7 +10,7 @@
 - node version `^v12.14.1`
 - npm version `^6.14.4`
 
-### [How to Getting Started](../)
+### [How to Getting Started](../../../)
 
 ### [How to Create the Test](create_the_test.md)
 
