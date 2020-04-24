@@ -88,6 +88,10 @@ $ npm run open-reports                          | to open the mochawesome report
 $ npm run test-api -- --grep @skip --invert && npm run grafana
 ```
 
+## Dummy Sample REST API
+- https://reqres.in
+- http://dummy.restapiexample.com
+
 ## Reference
 
 - https://medium.com/@fadlymahendra/api-test-automation-menggunakan-mocha-chai-22a78c48e842 / Fadly Mahendra
