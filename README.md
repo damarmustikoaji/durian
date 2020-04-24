@@ -2,17 +2,14 @@
 
 # Boilerplate on API Automation Testing
 
-> Mocha termasuk pustaka pengetesan yang bisa dipakai secara BDD ataupun TDD. Pustaka ini secara default memakai style BDD. Metode umum BDD adalah seperti describe, it, beforeEach, beforeAfter, before, after. 
+### Mocha
+> Mocha termasuk pustaka pengetesan yang bisa dipakai secara BDD ataupun TDD. Pustaka ini secara default memakai style BDD. Metode umum BDD adalah seperti describe, it, beforeEach, beforeAfter, before, after. (http://idjs.github.io/belajar-nodejs/testing/mocha.html)
 
-http://idjs.github.io/belajar-nodejs/testing/mocha.html
+### Chai
+> Chai library yang digunakan untuk memudahkan Mocha dalam melakukan assertion pada setiap API yang dipanggil. (https://medium.com/@albertkurnia/api-testing-dengan-mocha-chai-6543ff03010b)
 
-> Chai library yang digunakan untuk memudahkan Mocha dalam melakukan assertion pada setiap API yang dipanggil.
-
-https://medium.com/@albertkurnia/api-testing-dengan-mocha-chai-6543ff03010b
-
-> SuperTest yaitu modul npm yang khusus untuk mengetest server HTTP.
-
-https://idjs.github.io/belajar-nodejs/testing/rest_testing.html
+### SuperTest
+> SuperTest yaitu modul npm yang khusus untuk mengetest server HTTP. (https://idjs.github.io/belajar-nodejs/testing/rest_testing.html)
 
 ### Prerequisites
 
