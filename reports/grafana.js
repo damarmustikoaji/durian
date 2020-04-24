@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const jsonfile = require('jsonfile');
 
 const file = __dirname + '/mochawesome/mochawesome.json';
