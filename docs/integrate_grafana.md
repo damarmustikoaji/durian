@@ -53,3 +53,32 @@ jsonfile.readFile(file, async function(err, obj) {
 	await executeSql(sql);
 });
 ```
+
+Database menggunakan mysql / phpmyadmin, install xampp.
+
+### Installation
+
+#### Download and install
+OS X(via Homebrew):
+
+```sh
+brew update
+brew install grafana
+```
+
+#### Start Grafana
+Start Grafana using Homebrew services:
+
+```sh
+brew services start grafana
+```
+
+### Go to Grafana Dashboard
+```sh
+http://localhost:3000/login
+```
+#### Default login 
+Email: admin / Password: admin
+
+Reference:
+- https://grafana.com/docs/grafana/latest/installation/mac/
