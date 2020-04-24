@@ -57,14 +57,14 @@ jsonfile.readFile(file, async function(err, obj) {
 Database menggunakan mysql / phpmyadmin, install xampp.
 
 #### Xampp
-<img src="img/grafana_diagram.png" width="200"/>
+<img src="img/xampp.png" width="500"/>
 
 ### phpmyadmin
 ```sh
 http://localhost/phpmyadmin
 ```
 
-<img src="img/phpmyadmin.png" width="200"/>
+<img src="img/phpmyadmin.png" width="500"/>
 
 ### Create table
 ```sql
@@ -90,7 +90,7 @@ CREATE TABLE `mochawesome` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 ```
 
-### Installation
+### Installation Grafana
 
 #### Download and install
 OS X(via Homebrew):
