@@ -56,6 +56,40 @@ jsonfile.readFile(file, async function(err, obj) {
 
 Database menggunakan mysql / phpmyadmin, install xampp.
 
+#### Xampp
+<img src="img/grafana_diagram.png" width="200"/>
+
+### phpmyadmin
+```sh
+http://localhost/phpmyadmin
+```
+
+<img src="img/phpmyadmin.png" width="200"/>
+
+### Create table
+```sql
+CREATE TABLE `mochawesome` (
+  `id` int(6) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `suites` int(6) NOT NULL,
+  `tests` int(6) NOT NULL,
+  `passes` int(6) NOT NULL,
+  `pending` int(6) NOT NULL,
+  `failures` int(6) NOT NULL,
+  `start` varchar(50) NOT NULL,
+  `end` varchar(50) NOT NULL,
+  `duration` int(6) NOT NULL,
+  `testsRegistered` int(6) NOT NULL,
+  `passPercent` decimal(5,2) NOT NULL,
+  `pendingPercent` int(6) NOT NULL,
+  `other` int(11) NOT NULL,
+  `hasOther` varchar(25) NOT NULL,
+  `skipped` int(11) NOT NULL,
+  `hasSkipped` varchar(25) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+```
+
 ### Installation
 
 #### Download and install
