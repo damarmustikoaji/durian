@@ -2,17 +2,28 @@
 
 # Boilerplate on API Automation Testing
 
-> Mocha termasuk pustaka pengetesan yang bisa dipakai secara BDD ataupun TDD. Pustaka ini secara default memakai style BDD. Metode umum BDD adalah seperti describe, it, beforeEach, beforeAfter, before, after. http://idjs.github.io/belajar-nodejs/testing/mocha.html
+> Mocha termasuk pustaka pengetesan yang bisa dipakai secara BDD ataupun TDD. Pustaka ini secara default memakai style BDD. Metode umum BDD adalah seperti describe, it, beforeEach, beforeAfter, before, after. 
 
-> Chai library yang digunakan untuk memudahkan Mocha dalam melakukan assertion pada setiap API yang dipanggil. https://medium.com/@albertkurnia/api-testing-dengan-mocha-chai-6543ff03010b
+http://idjs.github.io/belajar-nodejs/testing/mocha.html
 
-> SuperTest yaitu modul npm yang khusus untuk mengetest server HTTP. https://idjs.github.io/belajar-nodejs/testing/rest_testing.html
+> Chai library yang digunakan untuk memudahkan Mocha dalam melakukan assertion pada setiap API yang dipanggil.
 
-### Prerequisites:
+https://medium.com/@albertkurnia/api-testing-dengan-mocha-chai-6543ff03010b
+
+> SuperTest yaitu modul npm yang khusus untuk mengetest server HTTP.
+
+https://idjs.github.io/belajar-nodejs/testing/rest_testing.html
+
+### Prerequisites
 
 - Install Node.js and npm, we will use npm to install Mocha & Chai and SuperTest
 
-### How to Getting Started:
+### Tested on
+- MacOS Catalina version 10.15.2
+- node version `^v12.14.1`
+- npm version `^6.14.4`
+
+### How to Getting Started
 
 ```sh
 $ cd mochaiwithsupertest
@@ -64,7 +75,7 @@ POST {{url}}/suggestions/product
 
 You can specify the command that you want to run from package.json file.
 
-###### Here are our default commands:
+###### Here are our default commands
 
 ```sh
 $ npm run test-api                              | to run all tests
