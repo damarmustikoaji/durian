@@ -1,4 +1,4 @@
-![mochai](https://img.shields.io/badge/AT--API-Mochai-yellow.svg) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
+![mochai](https://img.shields.io/badge/Mocha-Chai-yellowgreen.svg) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
 
 # Boilerplate of API Automation Testing
 
