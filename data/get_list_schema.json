@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+        "page",
+        "per_page",
+        "total",
+        "total_pages",
+        "data",
+        "ad"
+    ],
+    "properties": {
+        "page": {
+            "$id": "#/properties/page",
+            "type": "integer"
+        },
+        "per_page": {
+            "$id": "#/properties/per_page",
+            "type": "integer"
+        },
+        "total": {
+            "$id": "#/properties/total",
+            "type": "integer"
+        },
+        "total_pages": {
+            "$id": "#/properties/total_pages",
+            "type": "integer"
+        },
+        "data": {
+            "$id": "#/properties/data",
+            "type": "array",
+            "additionalItems": true,
+            "items": {
+                "$id": "#/properties/data/items",
+                "type": "object",
+                "additionalProperties": true,
+                "required": [
+                    "id",
+                    "name",
+                    "year",
+                    "color",
+                    "pantone_value"
+                ],
+                "properties": {
+                    "id": {
+                        "$id": "#/properties/data/items/properties/id",
+                        "type": "integer"
+                    },
+                    "name": {
+                        "$id": "#/properties/data/items/properties/name",
+                        "type": "string"
+                    },
+                    "year": {
+                        "$id": "#/properties/data/items/properties/year",
+                        "type": "integer"
+                    },
+                    "color": {
+                        "$id": "#/properties/data/items/properties/color",
+                        "type": "string"
+                    },
+                    "pantone_value": {
+                        "$id": "#/properties/data/items/properties/pantone_value",
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "ad": {
+            "$id": "#/properties/ad",
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+                "company",
+                "url",
+                "text"
+            ],
+            "properties": {
+                "company": {
+                    "$id": "#/properties/ad/properties/company",
+                    "type": "string"
+                },
+                "url": {
+                    "$id": "#/properties/ad/properties/url",
+                    "type": "string"
+                },
+                "text": {
+                    "$id": "#/properties/ad/properties/text",
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
