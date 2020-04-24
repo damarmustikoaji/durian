@@ -7,7 +7,7 @@ Penulisan test menggunakan framework mocha dan disimpan didalam folder `test`, s
 2. Buat file test `test/post_login_test.js`
 3. Scripts
 
-```javascripts
+```javascript
 const assert = require('chai').expect;
 const chai = require('chai');
 chai.use(require('chai-json-schema'));
