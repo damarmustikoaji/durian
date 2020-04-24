@@ -20,4 +20,4 @@
 
 ### How to using Seed Data
 
-### How to Integrate with Grafana
+### [How to Integrate with Grafana](integrate_grafana.md)
