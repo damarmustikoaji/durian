@@ -1,6 +1,6 @@
 ![mochai](https://img.shields.io/badge/AT--API-Mochai-yellow.svg) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
 
-# Boilerplate of API Automation Testing
+# Boilerplate on API Automation Testing
 
 > Mocha termasuk pustaka pengetesan yang bisa dipakai secara BDD ataupun TDD. Pustaka ini secara default memakai style BDD. Metode umum BDD adalah seperti describe, it, beforeEach, beforeAfter, before, after. http://idjs.github.io/belajar-nodejs/testing/mocha.html
 
