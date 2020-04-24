@@ -1,0 +1,13 @@
+{
+    "type": "object",
+    "additionalProperties": true,
+    "required": [
+        "token"
+    ],
+    "properties": {
+        "token": {
+            "$id": "#/properties/token",
+            "type": "string"
+        }
+    }
+}
