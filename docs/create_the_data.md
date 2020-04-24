@@ -1,4 +1,4 @@
-### [Back](../)
+### [Back](../docs)
 # How to using Data Test
 
 File data test dengan menggunakan format JSON, berguna untuk memisahkan file test dengan data. Kedepannya jika ada perubahan data pendukung untuk test, maka hanya perlu merubah file data JSON.
@@ -19,7 +19,7 @@ File disimpan dalam folder data, dan diteruskan peletakan folder serta nama file
 3. Import di file test
 4. Dan sesuaikan pada parameter yang dikirim ke fungsi page
 
-```javascripts
+```javascript
 
 const assert = require('chai').expect;
 const chai = require('chai');
