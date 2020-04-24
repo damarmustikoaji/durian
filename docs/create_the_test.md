@@ -1,4 +1,4 @@
-### [Back](../)
+### [<< Back](../docs)
 # How to Create the Test
 
 Penulisan test menggunakan framework mocha dan disimpan didalam folder `test`, sebelumnya kita harus membuat file page yang berisi url endpoint, tipe request, headers properties, dan juga body ([How to Create Page File](create_the_page.md)). Seperti melakukan testing API menggunakan POSTMAN, Swagger, ataupun Insomnia.
