@@ -6,7 +6,7 @@ Untuk membuat file page, kita perlu masuk ke folder `api`. Disarankan peletakkan
 1. Kita akan membuat page pada endpoint `https://reqres.in/api/login`, maka perlu membuat file didalam folder api dengan `api/login.js`
 2. Scripts
 
-```javascripts
+```javascript
 const supertest = require('supertest');
 require('dotenv').config();
 
