@@ -1,4 +1,4 @@
-### [Back](../)
+### [Back](../docs)
 # How to Create the Page file
 
 Untuk membuat file page, kita perlu masuk ke folder `api`. Disarankan peletakkan folder, dan nama file sesuai url endpoint. Dengan begitu akan mempermudah dalam manajemen page (endpoint). Dan sub url terakhir digunakan sebagai nama file.
