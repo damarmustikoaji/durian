@@ -8,7 +8,7 @@ Grafana adalah sebuah software opensource yang membaca sebuah data matrics untuk
 https://grafana.com/
 
 ### Grafana Process
-<img src="img/grafana_diagram.png" width="500"/>
+<img src="img/grafana_diagram.png" width="100"/>
 
 ### Description
 API testing ini menggunakan reporter dari module mochawesome, dan file reporter tersimpan didalam folder `reports/mochawesome/`. File terdiri dari `mochawesome.html`, `mochawesome.json` dan file pendukung html. Setiap melakukan running testing, maka tergenerate kedua file tersebut berdasarkan hasil testing.
