@@ -61,11 +61,10 @@ $ cp .env.sample .env
 3. The file (.js and .json) should be located in a path that matches the endpoint path
 
 ```sh
-POST {{url}}/suggestions/product
---page: /qa_test/api/page/suggentions/product.js
---test: /qa_test/api/test/suggentions/get_product_test.js
-        /qa_test/api/test/suggentions/post_product_test.js
---data: /qa_test/api/data/suggentions/product_data.json
+GET {{url}}/authors/books
+--page: /api/authors/books.js
+--test: /test/authors/get_books_test.js
+--data: /data/authors/book_data.json
 ```
 
 ## Run the test
