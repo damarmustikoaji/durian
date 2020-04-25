@@ -61,7 +61,9 @@ Default
 
 <img src="img/phpmyadmin.png" width="500"/>
 
-#### Create table
+#### Create Database
+
+#### Create Table
 ```sql
 CREATE TABLE `mochawesome` (
   `id` int(6) NOT NULL,
@@ -165,4 +167,5 @@ $ npm run test-api -- --grep @skip --invert && npm run grafana
 ```
 
 Reference:
+- https://www.webucator.com/how-to/how-install-start-test-xampp-on-mac-osx.cfm
 - https://grafana.com/docs/grafana/latest/installation/mac/
