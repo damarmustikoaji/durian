@@ -20,7 +20,7 @@ const testCase = {
 	after: 'See data'
 };
 
-describe(`@getUsersTest ${testCase.describe}`, () => {
+describe(`@skip @getUsersTest ${testCase.describe}`, () => {
 	describe(`${testCase.describePositive}`, () => {
 		it(`@get @getUsers ${testCase.positive.getUsers}`, async() => {
 			const response = await getUsers(page);

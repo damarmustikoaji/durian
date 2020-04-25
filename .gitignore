@@ -3,3 +3,4 @@ package-lock.json
 yarn.lock
 reports/mochawesome/*
 .env
+.DS_Store

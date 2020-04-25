@@ -89,8 +89,10 @@ $ npm run test-api -- --grep @skip --invert && npm run grafana
 ```
 
 ## Dummy Sample REST API
+- http://fakerestapi.azurewebsites.net/swagger
 - https://reqres.in
 - http://dummy.restapiexample.com
+- https://jsonplaceholder.typicode.com/
 
 ## Reference
 

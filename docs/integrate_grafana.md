@@ -10,24 +10,10 @@ https://grafana.com/
 ### Grafana Process
 <img src="img/grafana_diagram.png" width="100"/>
 
-### Description
-API testing ini menggunakan reporter dari module mochawesome, dan file reporter tersimpan didalam folder `reports/mochawesome/`. File terdiri dari `mochawesome.html`, `mochawesome.json` dan file pendukung html. Setiap melakukan running testing, maka tergenerate kedua file tersebut berdasarkan hasil testing.
+### Inserting the report in the database
 
-Di software Grafana support di beberapa database, seperti: PostgreSQL, Microsoft SQL Server (MSSQL), OpenTSDB, MySQL, dan sebagainya.
+#### File `reports/grafana.js`
 
-> Bagaimana cara report testing disimpan didalam database, yang nanti akan dibaca Grafana untuk dibuat menjadi sebuah grafik atau data tertulis (monitoring)?
-
-Logika sederhana:
-1. Membaca file mochawesome.json
-2. Mengambil `key` yang informatif
-3. `key` disimpan didalam database
-4. Grafana melakukan query ke database
-5. Grafana menampilkan data report testing
-
-Solusi:
-Diperlukan fungsi yang dapat membaca file json, kemudian dilakukan proses query `insert`. Untuk proses query bisa menggunakan fungsi yang digunakan proses Seed Data. Maka dibuat fungsi sederhana dengan nodejs sebagai berikut:
-
-File `reports/grafana.js`
 ```javascript
 const jsonfile = require('jsonfile');
 
@@ -54,19 +40,28 @@ jsonfile.readFile(file, async function(err, obj) {
 });
 ```
 
-Database menggunakan mysql / phpmyadmin, install xampp.
-
-#### Xampp
+### Database
+#### using XAMPP
 <img src="img/xampp.png" width="500"/>
 
-### phpmyadmin
+- Download https://www.apachefriends.org/download.html
+- Install xampp desktop
+- Star Server MySQL Database and Apache Web Server
+
+#### mysql phpmyadmin
 ```sh
 http://localhost/phpmyadmin
 ```
 
+Default
+- Host http://localhost / http://127.0.0.1
+- Username admin
+- Password admin
+- Port 3306
+
 <img src="img/phpmyadmin.png" width="500"/>
 
-### Create table
+#### Create table
 ```sql
 CREATE TABLE `mochawesome` (
   `id` int(6) NOT NULL,
@@ -107,12 +102,67 @@ Start Grafana using Homebrew services:
 brew services start grafana
 ```
 
-### Go to Grafana Dashboard
+#### Go to Grafana Dashboard
 ```sh
 http://localhost:3000/login
 ```
-#### Default login 
 Email: admin / Password: admin
+
+#### Setup Grafana Dashboard
+
+<img src="img/grafana_welcome.png" width="500"/>
+
+1. Go to Configuration - Data Source
+2. And choose MySQL
+
+<img src="img/grafana_data_source.png" width="500"/>
+
+3. Settings the MySQL Connection
+
+<img src="img/grafana_setup_mysql.png" width="500"/>
+
+4. Create the dashboard, and setup the panel
+5. And add Query
+
+```sql
+select created_at as time,
+failures as "Failed Test"
+from mochawesome
+where name = 'test'
+group by created_at;
+```
+
+```sql
+select created_at as time,
+tests as "Run Test"
+from mochawesome
+where name = 'test'
+group by created_at;
+```
+
+6. Save
+
+<img src="img/grafana_graphics.png" width="500"/>
+
+### How to Run - Integrate
+1. package.json > scripts > `"grafana": "node reports/grafana.js",`
+
+```json
+{
+  "name": "mochaiwithsupertest",
+  "version": "1.0.0",
+  "description": "Boilerplate Automation Testing API",
+  "main": "index.js",
+  "scripts": {
+    "test-api": "./node_modules/mocha/bin/mocha ./test --recursive --reporter mochawesome --reporter-options reportDir=reports/mochawesome/ --timeout 180000 --exit",
+    "grafana": "node reports/grafana.js",
+```
+
+2. Run
+
+```sh
+$ npm run test-api -- --grep @skip --invert && npm run grafana
+```
 
 Reference:
 - https://grafana.com/docs/grafana/latest/installation/mac/
