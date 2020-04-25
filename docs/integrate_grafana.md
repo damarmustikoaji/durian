@@ -115,7 +115,7 @@ Email: admin / Password: admin
 1. Go to Configuration - Data Source
 2. And choose MySQL
 
-<img src="img/grafana_data_source.png" width="500"/>
+<img src="img/grafana_data_sources.png" width="500"/>
 
 3. Settings the MySQL Connection
 
