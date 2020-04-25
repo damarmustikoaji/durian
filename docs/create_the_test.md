@@ -141,7 +141,7 @@ DB_DATABASE=coba1
 ### How to Run
 
 ```sh
-- npm run test-api -- --grep @getBooksIdTest					| Only tag name @getBooksIdTest
-- npm run test-api -- --grep @skip --invert						| All test with no have tag name @skip
+- npm run test-api -- --grep @getBooksIdTest			| Only tag name @getBooksIdTest
+- npm run test-api -- --grep @skip --invert			| All test with no have tag name @skip
 - npm run test-api -- --grep @skip --invert && npm run grafana	| All test with integration Grafana (insert report file to the database)
 ```
