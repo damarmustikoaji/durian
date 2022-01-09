@@ -28,3 +28,8 @@ jobs:
     - run: cp .env.sample .env
     - run: npm install
     - run: npm run test-api
+    - name: Archive Results
+      uses: actions/upload-artifact@v2
+      with:
+        name: Reporting
+        path: reports
