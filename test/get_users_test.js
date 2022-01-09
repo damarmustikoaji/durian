@@ -22,7 +22,7 @@ const testCase = {
 
 describe(`@skip @getUsersTest ${testCase.describe}`, () => {
 	describe(`${testCase.describePositive}`, () => {
-		it(`@get @getUsers ${testCase.positive.getUsers}`, async() => {
+		it.skip(`@get @getUsers ${testCase.positive.getUsers}`, async() => {
 			const response = await getUsers(page);
 			assert(response.status).to.equal(code.success.ok, response.body.message);
 			assert(response.body).to.be.jsonSchema(schemaUsers);

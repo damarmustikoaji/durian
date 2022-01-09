@@ -16,7 +16,7 @@ const testCase = {
 
 describe(`@getListTest ${testCase.describe}`, () => {
 	describe(`${testCase.describePositive}`, () => {
-		it(`@get @getList ${testCase.positive.getList}`, async() => {
+		it.skip(`@get @getList ${testCase.positive.getList}`, async() => {
 			const response = await getUnknown();
 			assert(response.status).to.equal(code.success.ok, response.body.message);
 			assert(response.body).to.be.jsonSchema(schemaList);

@@ -23,18 +23,18 @@ const testCase = {
 
 describe(`@getBooksIdTest ${testCase.describe}`, () => {
 	describe(`${testCase.describePositive}`, () => {
-		it(`@get @getBooksId ${testCase.positive.getBooksId}`, async() => {
+		it.skip(`@get @getBooksId ${testCase.positive.getBooksId}`, async() => {
 			const response = await getBooksId(idBook);
 			assert(response.status).to.equal(code.success.ok, response.body.message);
 			assert(response.body).to.be.jsonSchema(schemaUsers);
 		});
 	});
 	describe(`${testCase.describeNegative}`, () => {
-		it(`@get @wrongId ${testCase.negative.wrongId}`, async() => {
+		it.skip(`@get @wrongId ${testCase.negative.wrongId}`, async() => {
 			const response = await getBooksId(wrongId);
 			assert(response.status).to.equal(code.success.ok, response.body.message);
 		});
-		it(`@get @invalidId ${testCase.negative.invalidId}`, async() => {
+		it.skip(`@get @invalidId ${testCase.negative.invalidId}`, async() => {
 			const response = await getBooksId(invalidId);
 			assert(response.status).to.equal(code.error.badRequest, response.body.message);
 		});
