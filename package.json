@@ -4,7 +4,7 @@
   "description": "Boilerplate Automation Testing API",
   "main": "index.js",
   "scripts": {
-    "test-api": "./node_modules/mocha/bin/mocha ./test --recursive --reporter mochawesome --reporter-options reportDir=../../reports/mochawesome/ --timeout 180000 --exit",
+    "test-api": "./node_modules/mocha/bin/mocha ./test --recursive --reporter mochawesome --reporter-options reportDir=../reports/mochawesome/ --timeout 180000 --exit",
     "grafana": "node reports/grafana.js",
     "open-reports": "open 'reports/mochawesome/mochawesome.html'",
     "clean": "rm -rf node_modules package-lock.json yarn.lock"
