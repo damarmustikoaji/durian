@@ -13,16 +13,10 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Dependencies
-        uses: actions/checkout@v2
-        with: build-output
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/lock.json') }}
+      - name: Installing
         run: npm install
-  # test:
-  #   needs: [deploy]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - name: Run
-  #       run: pwd
-  #     - name: Run
-  #       run: ls -a
