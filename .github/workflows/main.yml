@@ -27,7 +27,6 @@ jobs:
         REQRES_BASE_URL: ${{ secrets.REQRES_BASE_URL }}
       run: |
         echo $FAKERESTAPI_BASE_URL
-    - run: cat .env
     - run: npm install
     - run: npm run test-api
     - uses: actions/upload-artifact@v2
