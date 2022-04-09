@@ -17,8 +17,5 @@ jobs:
     needs: deploy
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v2
-      - name: testing
-        uses: actions/checkout@v2
       - name: AT Run
         run: npm run test-api
