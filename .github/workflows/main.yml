@@ -18,17 +18,12 @@ jobs:
         node-version: [16.14.2]
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}
+    - name: build
     - run: npm install
   test:
     needs: build
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - name: test
     - run: npm run test-api
-      name: Archive Results
-      with:
-        name: Reporting
-        path: reports
