@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
+  REQRES_BASE_URL: ${{ secrets.REQRES_BASE_URL }}
 jobs:
   build:
 
@@ -22,9 +25,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Do Something with env files
-      env:
-        FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
-        REQRES_BASE_URL: ${{ secrets.REQRES_BASE_URL }}
+      uses: CallePuzzle/envvar-to-dotenv-action@0.1.0
+      with:
+        variableNames: FAKERESTAPI_BASE_URL,REQRES_BASE_URL
       run: |
         echo $FAKERESTAPI_BASE_URL
     - run: npm install
