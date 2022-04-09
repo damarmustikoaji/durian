@@ -24,7 +24,7 @@ jobs:
     # - run: cp .env.sample .env
     - name: Make envfile
       run: | 
-          echo "FAKERESTAPI_BASE_URL=${{FAKERESTAPI_BASE_URL}}" > .env
+          echo "FAKERESTAPI_BASE_URL=${{secrets.FAKERESTAPI_BASE_URL}}" > .env
           echo "REQRES_BASE_URL=${{secrets.REQRES_BASE_URL}}" >> .env
     - run: cat .env
     - run: npm install
