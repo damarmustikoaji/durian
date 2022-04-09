@@ -11,15 +11,9 @@ env:
   REQRES_BASE_URL: ${{ secrets.REQRES_BASE_URL }}
   
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - name: build
-    - run: npm install
-  # test:
-  #   needs: build
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #   - name: test
-  #   - run: npm run test-api
+      - uses: actions/checkout@v2
+      - name: Install Dependencies
+        run: npm install
