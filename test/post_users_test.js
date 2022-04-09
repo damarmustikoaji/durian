@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 
 const code = require('../helper/response.json');
 const { postUsers } = require('../api/users');
-const schemaUsers = require('../data/post_users_schema.json');
+const schemaUsers = require('../data/schema/post_users_schema.json');
 
 const payload = {
 	'name': 'morpheus',

@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 
 const code = require('../helper/response.json');
 const { getUnknown } = require('../api/unknown');
-const schemaList = require('../data/get_list_schema.json');
+const schemaList = require('../data/schema/get_list_schema.json');
 
 const testCase = {
 	describe: 'REQ|RES List <resource> | [GET] /api/unknown',

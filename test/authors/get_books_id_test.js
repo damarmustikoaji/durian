@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 
 const code = require('../../helper/response.json');
 const { getBooksId } = require('../../api/authors/books');
-const schemaUsers = require('../../data/authors/get_books_id_schema.json');
+const schemaUsers = require('../../data/schema/authors/get_books_id_schema.json');
 
 const idBook = 2, wrongId = 1, invalidId = 'abc123';
 

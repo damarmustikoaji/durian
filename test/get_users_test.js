@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 
 const code = require('../helper/response.json');
 const { getUsers } = require('../api/users');
-const schemaUsers = require('../data/get_users_schema.json');
+const schemaUsers = require('../data/schema/get_users_schema.json');
 
 const { executeSql } = require('../seed_data/sql_page');
 const { UPDATE_MOCHAWESOME } = require('../seed_data/query/update');

@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 
 const code = require('../helper/response.json');
 const { getUsersId } = require('../api/users');
-const schemaUsers = require('../data/get_users_id_schema.json');
+const schemaUsers = require('../data/schema/get_users_id_schema.json');
 
 const userId = 2, invalidId = 'abc';
 

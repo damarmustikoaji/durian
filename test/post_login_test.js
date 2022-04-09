@@ -4,7 +4,7 @@ chai.use(require('chai-json-schema'));
 
 const code = require('../helper/response.json');
 const { postLogin } = require('../api/login');
-const schemaLogin = require('../data/post_login_schema.json');
+const schemaLogin = require('../data/schema/post_login_schema.json');
 
 const payload = {
 	'email': 'eve.holt@reqres.in',
