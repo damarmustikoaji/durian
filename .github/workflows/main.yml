@@ -22,10 +22,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: decode .env from github secrets
-      run: |
-        echo $FAKERESTAPI_BASE_URL | base64 --decode > .env
       env:
         FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
+      run: |
+        echo import certificate from secrets and regenerate the file
+        echo $FAKERESTAPI_BASE_URL | base64 -d > .env
     - run: cat .env
     # - run: npm install
     # - run: npm run test-api
