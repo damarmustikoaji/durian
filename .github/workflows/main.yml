@@ -22,16 +22,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: decode .env from github secrets
-      env:
-        # sesuaikan dengan nama di github secret
-        FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
       run: |
       touch .env
       echo "${FAKERESTAPI_BASE_URL// /}" | base64 --decode > .env
-    # - name: Make envfile
-    #   run: | 
-    #       echo "FAKERESTAPI_BASE_URL=${{secrets.FAKERESTAPI_BASE_URL}}" | base64 --decode > .env
-    #       echo "REQRES_BASE_URL=${{secrets.REQRES_BASE_URL}}" | base64 --decode >> .env
     - run: cat .env
     - run: npm install
     - run: npm run test-api
