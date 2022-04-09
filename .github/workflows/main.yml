@@ -24,10 +24,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Do Something with env files
-      uses: CallePuzzle/envvar-to-dotenv-action@0.1.0
-      with:
-        variableNames: FAKERESTAPI_BASE_URL,REQRES_BASE_URL
+    # - name: Do Something with env files
+    #   uses: CallePuzzle/envvar-to-dotenv-action@0.1.0
+    #   with:
+    #     variableNames: FAKERESTAPI_BASE_URL,REQRES_BASE_URL
     - run: npm install
     - run: npm run test-api
     - uses: actions/upload-artifact@v2
