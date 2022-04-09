@@ -21,9 +21,12 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cp .env.sample .env
+    # - run: cp .env.sample .env
     - name: Make envfile
-      run: echo "FAKERESTAPI_BASE_URL=FAKERESTAPI_BASE_URL" > .env
+      run: | 
+          echo "FAKERESTAPI_BASE_URL=http://fakerestapi.azurewebsites.net" > .env
+          echo "REQRES_BASE_URL=https://reqres.in" > .env
+    - run: cat .env
     - run: npm install
     - run: npm run test-api
     - uses: actions/upload-artifact@v2
