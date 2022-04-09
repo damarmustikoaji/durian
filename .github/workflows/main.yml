@@ -26,13 +26,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: cp .env.sample .env
-        - name: Make envfile
-        uses: ./
-        with:
-          file_name: .cobain
-
-      - name: Verify envfile
-        run: |
+    - name: Make envfile
+      uses: ./
+      with:
+        file_name: .cobain
+    - name: Verify envfile
+      run: |
           TEST=$(cat <<-END
             DEBUG=false
             SECRET_KEY=password123
