@@ -23,7 +23,6 @@ jobs:
         run: ls -a
   test:
     needs: deploy
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run
