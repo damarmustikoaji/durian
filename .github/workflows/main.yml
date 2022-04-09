@@ -13,16 +13,13 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.14.2]
     steps:
     - uses: actions/checkout@v2
     - name: build
     - run: npm install
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: test
-    - run: npm run test-api
+  # test:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - name: test
+  #   - run: npm run test-api
