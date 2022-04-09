@@ -1,36 +1,24 @@
-name: Node.js CI
-
+name: AutomationTesting
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
 
-env:
-  FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
-  REQRES_BASE_URL: ${{ secrets.REQRES_BASE_URL }}
-
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Install Module
-    - uses: actions/checkout@v2
-    - run: npm install
+      # - uses: actions/checkout@v2
+      - name: deploying
+        uses: actions/checkout@v2
+        run: npm install
   test:
-    needs: build
+    needs: deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Running Test
-    - uses: actions/upload-artifact@v2
-    - run: npm run test-api
-  report:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-    - name: Reporting
-    - uses: actions/upload-artifact@v2
-      name: Archive Results
-      with:
-        name: Reporting
-        path: reports
+      # - uses: actions/checkout@v2
+      - name: testing
+        uses: actions/checkout@v2
+      - name: AT Run
+        run: npm run test-api
