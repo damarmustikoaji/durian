@@ -20,10 +20,11 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
-        node-version: ${{ matrix.node-version }}ßßß
+        node-version: ${{ matrix.node-version }}
+    # - run: cp .env.sample .env
     - name: Make envfile
       run: | 
-          echo "FAKERESTAPI_BASE_URL=${FAKERESTAPI_BASE_URL}" > .env
+          echo "FAKERESTAPI_BASE_URL=${{secrets.FAKERESTAPI_BASE_URL}}" > .env
           echo "REQRES_BASE_URL=https://reqres.in" >> .env
     - run: cat .env
     - run: npm install
