@@ -28,5 +28,5 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with: npm-cache
-        name: Run
-          run: ls -a
+      - name: Run
+        run: ls -a
