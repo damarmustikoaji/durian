@@ -13,19 +13,16 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: Install Dependencies
+        uses: actions/checkout@v2
+        with: build-output
         run: npm install
-      - name: Run
-        run: pwd
-      - name: Run
-        run: ls -a
-  test:
-    needs: [deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run
-        run: pwd
-      - name: Run
-        run: ls -a
+  # test:
+  #   needs: [deploy]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Run
+  #       run: pwd
+  #     - name: Run
+  #       run: ls -a
