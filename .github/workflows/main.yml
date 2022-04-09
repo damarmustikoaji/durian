@@ -22,13 +22,12 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: decode .env from github secrets
-      run: |
-        echo $FAKERESTAPI_BASE_URL | base64 --decode > .env
+      run: echo ${{ secrets.FAKERESTAPI_BASE_URL }} | base64 -d > .env
     - run: cat .env
-    - run: npm install
-    - run: npm run test-api
-    - uses: actions/upload-artifact@v2
-      name: Archive Results
-      with:
-        name: Reporting
-        path: reports
+    # - run: npm install
+    # - run: npm run test-api
+    # - uses: actions/upload-artifact@v2
+    #   name: Archive Results
+    #   with:
+    #     name: Reporting
+    #     path: reports
