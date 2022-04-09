@@ -3,8 +3,6 @@ name: Node.js CI
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
 env:
   FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
@@ -22,7 +20,8 @@ jobs:
       - name: Run
         run: ls -a
   test:
-    needs: deploy
+    needs: [deploy]
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Run
