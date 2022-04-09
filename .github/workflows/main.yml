@@ -22,7 +22,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - name: Make envfile
-      uses: ./.github/actions/dotenv-action
+      uses: actions/dotenv-action
       with:
         envkey_SECRET_KEY: ${{ secrets.FAKERESTAPI_BASE_URL }}
     - run: echo $envkey_SECRET_KEY 
