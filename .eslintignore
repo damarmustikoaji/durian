@@ -1,5 +1,5 @@
 /node_modules
-/reports
+reports
 .eslintrc.js
 .eslintrc.json
 .linkstagedrc
