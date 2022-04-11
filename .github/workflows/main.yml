@@ -15,18 +15,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/cache@v2
-      name: npm-cache
+    - name: NPM Cache
+      uses: actions/cache@v2
       with:
         path: '**/node_modules'
         key: ${{ runner.os }}-modules-${{ hashFiles('**/lock.json') }}
-    - name: Installing
+    - name: NPM Install
       run: npm install
     - name: Running Test
       run: npm run test-api
-    - name: Archive Results
+    - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: Reporting
+        name: Reports
         path: reports
