@@ -1,27 +1,18 @@
-name: CI
+name: Automation Testing
 
-on: [push]
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
 
+env:
+  FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
+  REQRES_BASE_URL: ${{ secrets.REQRES_BASE_URL }}
+  
 jobs:
-  setup:
+  testing:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - run: npm install
-  build:
-    needs: setup
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - run: npm run test-api
-  shutdown:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/upload-artifact@v2
-        if: always()
-        name: Archive Results
-        with:
-          name: Reporting
-          path: reports
+    - uses: ./.github/workflows/my-action
+      run: npm run test-api
