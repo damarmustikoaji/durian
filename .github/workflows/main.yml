@@ -10,19 +10,18 @@ env:
   FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
   REQRES_BASE_URL: ${{ secrets.REQRES_BASE_URL }}
   
-
 jobs:
-  build:
+  testing:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      name: npm-cache
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/lock.json') }}
   install:
+    needs: install
     steps:
-    - name: install
-      run: |
-        npm install
-  test:
-    steps:
-    - name: test
-      run: |
-        npm run test-api
+    - name: Installing
+      run: npm install
