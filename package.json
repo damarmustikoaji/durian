@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "Boilerplate Automation Testing API",
   "scripts": {
-    "test-api": "./node_modules/mocha/bin/mocha ./test --recursive --reporter mochawesome --reporter-options reportDir=../reports/mochawesome/ --timeout 180000 --exit",
-    "grafana": "node reports/grafana.js",
+    "test-api": "./node_modules/mocha/bin/mocha ./test --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 180000 --exit",
     "open-reports": "open 'reports/mochawesome/mochawesome.html'"
   },
   "author": "damar mustiko aji",
@@ -15,7 +14,6 @@
     "dotenv": "^16.0.0",
     "mocha": "^9.2.2",
     "mochawesome": "^7.1.3",
-    "mysql": "^2.18.1",
     "supertest": "^6.2.2"
   },
   "devDependencies": {
