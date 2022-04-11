@@ -22,7 +22,7 @@ jobs:
         key: ${{ runner.os }}-modules-${{ hashFiles('**/lock.json') }}
   install:
     runs-on: ubuntu-latest
-    needs: install
+    needs: testing
     steps:
     - name: Installing
       run: npm install
