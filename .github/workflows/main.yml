@@ -25,4 +25,6 @@ jobs:
     needs: testing
     steps:
     - name: Installing
-      run: npm install
+      run: |
+        cd ..
+        npm install
