@@ -15,12 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: NPM Cache
+    - name: npm cache
       uses: actions/cache@v2
       with:
         path: '**/node_modules'
         key: ${{ runner.os }}-modules-${{ hashFiles('**/lock.json') }}
-    - name: NPM Install
+    - name: Installing
       run: npm install
     - name: Running Test
       run: npm run test-api
