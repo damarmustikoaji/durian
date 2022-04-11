@@ -20,6 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: actions/upload-artifact@v2
+        if: always()
         name: Archive Results
         with:
           name: Reporting
