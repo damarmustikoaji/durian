@@ -1,6 +1,6 @@
 ![mochai](https://img.shields.io/badge/Mocha-Chai-yellowgreen.svg) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
 
-# Boilerplate on API Automation Testing
+# Boilerplate API Automation Testing
 
 ### Mocha
 > Mocha termasuk pustaka pengetesan yang bisa dipakai secara BDD ataupun TDD. Pustaka ini secara default memakai style BDD. Metode umum BDD adalah seperti describe, it, beforeEach, beforeAfter, before, after. (http://idjs.github.io/belajar-nodejs/testing/mocha.html)
@@ -33,17 +33,20 @@ $ cp .env.sample .env
     .
     ├── api             
     ├── data     
-    ├── helper
+    |        ├── data_test.json
+    |        └── schema
+    ├── helpers
+    |        ├── grafana.js
+    |        ├── random_string.js
     |        ├── message.json
     |        └── response.json      
     ├── reports 
-    |        ├── mochawesome 
-    |        └── grafana.js 
-    |  
+    |        ├── report.json 
+    |        └── report.html
     ├── seed_data 
     |        ├── query 
     |        └── sql_page.js 
-    ├── test
+    ├── tests
     ├── .env
     └── package.json
 
@@ -51,14 +54,15 @@ $ cp .env.sample .env
 | --------- | ----------------------------------------------------------------- |
 | api       | 1 endpoint, many HTTP method in one file .js                      |
 | data      | For test data, file extention should be .json                     |
-| helper    | Common code, for general needed such as response_code, token, etc |
-| test      | 1 endpoint, 1 HTTP method, many test cases. or e2e                |
+| helpers   | Common code, for general needed such as response_code, token, etc |
+| tests     | 1 endpoint, 1 HTTP method, many test cases. or e2e                |
 
 ### Foldering and Naming Convention
 
 1. Filename using `snake_case`
 2. Variable name using `camelCase`
 3. The file (.js and .json) should be located in a path that matches the endpoint path
+4. Env Variable using `UPPER_CASE`
 
 ```sh
 GET {{url}}/authors/books
