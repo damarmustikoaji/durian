@@ -31,7 +31,7 @@ describe(`@getUsersIdTest ${testCase.describe}`, () => {
 	describe(`${testCase.describeNegative}`, () => {
 		it(`@get @invalidId ${testCase.negative.invalidId}`, async() => {
 			const response = await getUsersId(invalidId);
-			assert(response.status).to.equal(200, response.body.message);
+			assert(response.status).to.equal(404, response.body.message);
 		});
 	}); 
 }); 
