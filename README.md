@@ -3,12 +3,15 @@
 # Boilerplate API Automation Testing
 
 ### Mocha
+
 > Mocha termasuk pustaka pengetesan yang bisa dipakai secara BDD ataupun TDD. Pustaka ini secara default memakai style BDD. Metode umum BDD adalah seperti describe, it, beforeEach, beforeAfter, before, after. (http://idjs.github.io/belajar-nodejs/testing/mocha.html)
 
 ### Chai
+
 > Chai library yang digunakan untuk memudahkan Mocha dalam melakukan assertion pada setiap API yang dipanggil. (https://medium.com/@albertkurnia/api-testing-dengan-mocha-chai-6543ff03010b)
 
 ### SuperTest
+
 > SuperTest yaitu modul npm yang khusus untuk mengetest server HTTP. (https://idjs.github.io/belajar-nodejs/testing/rest_testing.html)
 
 ### Prerequisites
@@ -16,6 +19,7 @@
 - Install Node.js and npm, we will use npm to install Mocha & Chai and SuperTest
 
 ### Tested on
+
 - MacOS Catalina version 10.15.2
 - node version `^v12.14.1`
 - npm version `^6.14.4`
@@ -43,9 +47,6 @@ $ cp .env.sample .env
     ├── reports 
     |        ├── report.json 
     |        └── report.html
-    ├── seed_data 
-    |        ├── query 
-    |        └── sql_page.js 
     ├── tests
     ├── .env
     └── package.json
@@ -85,21 +86,20 @@ $ npm run test-api -- --grep @skip --invert     | to exclude @skip tag
 $ npm run open-reports                          | to open the mochawesome report
 ```
 
-## Integrate with Grafana
-
-```sh
-$ npm run test-api -- --grep @skip --invert && npm run grafana
-```
-
 ## Dummy Sample REST API
+
 - http://fakerestapi.azurewebsites.net/swagger
 - https://reqres.in
 - http://dummy.restapiexample.com
 - https://jsonplaceholder.typicode.com/
 
+## Generate Schema JSON
+
+- https://jsonschema.net
+
 ## Reference
 
-- https://medium.com/@fadlymahendra/api-test-automation-menggunakan-mocha-chai-22a78c48e842 / Fadly Mahendra
-- https://medium.com/ralali-engineering/quality-engineering-transformation-in-ralali-com-4852b03fe5f8 / Irwan Rosyadi
+- https://medium.com/@fadlymahendra/api-test-automation-menggunakan-mocha-chai-22a78c48e842
+- https://medium.com/ralali-engineering/quality-engineering-transformation-in-ralali-com-4852b03fe5f8
 
 ## [Documentation](docs)

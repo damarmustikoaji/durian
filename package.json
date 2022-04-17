@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Boilerplate Automation Testing API",
   "scripts": {
-    "test-api": "./node_modules/mocha/bin/mocha ./test --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 180000 --exit",
+    "test-api": "./node_modules/mocha/bin/mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 180000 --exit",
     "open-reports": "open 'reports/mochawesome/mochawesome.html'"
   },
   "author": "damar mustiko aji",

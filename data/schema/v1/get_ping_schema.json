@@ -1,0 +1,17 @@
+{
+    "type": "object",
+    "required": [
+        "status",
+        "message"
+    ],
+    "properties": {
+        "status": {
+            "$id": "#/properties/status",
+            "type": "string"
+        },
+        "message": {
+            "$id": "#/properties/message",
+            "type": "string"
+        }
+    }
+}

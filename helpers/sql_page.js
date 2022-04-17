@@ -23,3 +23,9 @@ const executeSql = (sql) => {
 module.exports = {
 	executeSql
 };
+
+/*
+how to use:
+const query = 'DELETE FROM table WHERE id = 1';
+await executeSql(query);
+*/
