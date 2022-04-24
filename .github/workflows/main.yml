@@ -24,10 +24,10 @@ jobs:
     - name: Installing
       run: npm install
     - name: Running Test
-      run: npm run test-api
-    - name: Reporting
-      if: always()
-      uses: actions/upload-artifact@v2
-      with:
-        name: Reports
-        path: reports
+      run: npm run testrail-api
+    # - name: Reporting
+    #   if: always()
+    #   uses: actions/upload-artifact@v2
+    #   with:
+    #     name: Reports
+    #     path: reports

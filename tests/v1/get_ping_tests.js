@@ -10,7 +10,7 @@ const testCase = {
 	describe: 'COBAPI - Check Health | [GET] /v1/ping',
 	describePositive: 'Positive Testing',
 	positive: {
-		getValid: 'As a User, I should be able to successfully request GET ping'
+		getValid: 'C105 As a User, I should be able to successfully request GET ping'
 	}
 };
 
