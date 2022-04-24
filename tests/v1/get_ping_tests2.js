@@ -7,10 +7,10 @@ const schema = require('../../data/schema/v1/get_ping_schema.json');
 const { getPing } = require('../../api/v1/ping');
 
 const testCase = {
-	describe: 'COBAPI - Check Health | [GET] /v1/ping',
+	describe: 'COBAPI - List Employees | [GET] /v1/employees',
 	describePositive: 'Positive Testing',
 	positive: {
-		getValid: '[C105] As a User, I should be able to successfully request GET ping'
+		getValid: '[C106] As a User, I should be able to successfully request GET employee list'
 	}
 };
 
