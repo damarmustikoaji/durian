@@ -26,7 +26,8 @@ jobs:
     - name: Installing
       run: npm install
     - name: Running Test
-      run: npm run testrail-api
+      run: npm run test-api
+#       run: npm run testrail-api
     - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
