@@ -2,7 +2,7 @@ name: Automation Testing
 
 on:
   schedule:
-    - cron: "27 18 * * *"
+    - cron:  '*/1 * * * *'
   push:
     branches: [ master ]
   pull_request:
