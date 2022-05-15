@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ master ]
   schedule:
-    - cron:  '0 20 * * *'
+    - cron:  '*/60 * * * *'
 
 env:
   FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
@@ -27,9 +27,9 @@ jobs:
       run: npm install
     - name: Running Test
       run: npm run testrail-api
-    # - name: Reporting
-    #   if: always()
-    #   uses: actions/upload-artifact@v2
-    #   with:
-    #     name: Reports
-    #     path: reports
+    - name: Reporting
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Reports
+        path: reports
