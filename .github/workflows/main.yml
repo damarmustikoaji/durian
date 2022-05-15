@@ -1,12 +1,12 @@
 name: Automation Testing
 
 on:
+  schedule:
+    - cron: "27 18 * * *"
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-  schedule:
-    - cron: "23 18 * * *"
 
 env:
   FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
