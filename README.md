@@ -1,4 +1,4 @@
-![mochai](https://img.shields.io/badge/Mocha-Chai-yellowgreen.svg) ![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)
+[![Automation Testing](https://github.com/damarmustikoaji/durian/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/damarmustikoaji/durian/actions/workflows/main.yml)![mochai](https://img.shields.io/badge/Mocha-Chai-yellowgreen.svg)
 
 # Boilerplate API Automation Testing
 
