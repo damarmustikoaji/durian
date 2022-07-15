@@ -1,8 +1,6 @@
 name: Automation Testing
 
 on:
-  push:
-    branches: [ master ]
   schedule:
     - cron:  '50 11 * * 1-5'
 
@@ -16,13 +14,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-#     - name: npm cache
-#       uses: actions/cache@v2
-#       with:
-#         path: '**/node_modules'
-#         key: ${{ runner.os }}-modules-${{ hashFiles('**/lock.json') }}
+    - name: npm cache
+      uses: actions/cache@v2
+      with:
+        path: '**/node_modules'
+        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
     - name: Installing
-      run: npm install
+      run: yarn install
     - name: Running Test
       run: npm run test-api
 #       run: npm run testrail-api
