@@ -4,7 +4,7 @@ on:
   push:
     branches: [ master ]
   schedule:
-    - cron:  '30 07 * * 1-5'
+    - cron:  '50 11 * * 1-5'
 
 env:
   FAKERESTAPI_BASE_URL: ${{ secrets.FAKERESTAPI_BASE_URL }}
