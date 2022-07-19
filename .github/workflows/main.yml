@@ -1,6 +1,8 @@
 name: Automation Testing
 
 on:
+  push:
+    branches: [ "master" ]
   schedule:
     - cron:  '0 22 * * *'
 
@@ -23,10 +25,12 @@ jobs:
       run: yarn install
     - name: Running Test
       run: npm run test-api
-#       run: npm run testrail-api
+    - name: Get current date
+      id: date
+      run: echo "::set-output name=date::$(date +'%Y-%m-%d_%M%S')"
     - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: Reports
+        name: Reports ${{ steps.date.outputs.date }}
         path: reports
