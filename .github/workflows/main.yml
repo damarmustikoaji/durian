@@ -34,7 +34,7 @@ jobs:
       with:
         who-to-greet: 'Damar Punya Salak'
     - name: Prepare Name
-      run: myVar=echo "${{ steps.hello.outputs.time }}" | tr -d ':'
+      run: export myVar=echo "${{ steps.hello.outputs.time }}" | tr -d ':'
     - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
