@@ -33,11 +33,12 @@ jobs:
       uses: damarmustikoaji/salak@v1.2
       with:
         who-to-greet: 'Damar Punya Salak'
+    - name: Prepare Name
+      run: myVar=echo "${{ steps.hello.outputs.time }}" | tr -d ':'
     - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        env: judul=echo "${{ steps.hello.outputs.time }}" | tr -d ':'
 #         name: Reports ${{ steps.date.outputs.date }} (UTC)
-        name: Reports $judul
+        name: Reports $myVar
         path: reports
