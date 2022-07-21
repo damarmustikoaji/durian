@@ -25,12 +25,18 @@ jobs:
       run: yarn install
     - name: Running Test
       run: npm run test-api
+#     - name: Get current date
+#       id: date
+#       run: echo "::set-output name=date::$(date +'%Y-%m-%d %H.%M')"
     - name: Get current date
-      id: date
-      run: echo "::set-output name=date::$(date +'%Y-%m-%d %H.%M')"
+      id: hello
+      uses: damarmustikoaji/salak@v1.2
+      with:
+        who-to-greet: 'Damar Punya Salak'
     - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
       with:
-        name: Reports ${{ steps.date.outputs.date }} (UTC)
+#         name: Reports ${{ steps.date.outputs.date }} (UTC)
+        name: Reports ${{ steps.hello.outputs.time }} (UTC)
         path: reports
