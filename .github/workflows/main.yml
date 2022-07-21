@@ -34,11 +34,11 @@ jobs:
       with:
         who-to-greet: 'Damar Punya Salak'
     - name: Prepare Name
-      run: export myVar=echo "${{ steps.hello.outputs.time }}" | tr -d ':'
+      run: echo "${{ steps.hello.outputs.time }}" | tr -d ':' >> $GITHUB_ENV
     - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
       with:
 #         name: Reports ${{ steps.date.outputs.date }} (UTC)
-        name: Reports $myVar
+        name: Reports $GITHUB_ENV
         path: reports
