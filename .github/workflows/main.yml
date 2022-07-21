@@ -38,5 +38,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
 #         name: Reports ${{ steps.date.outputs.date }} (UTC)
-        name: Reports ${{ steps.hello.outputs.time }} (UTC)
+        name: Reports echo "${{ steps.hello.outputs.time }}" | tr -d ':'
         path: reports
