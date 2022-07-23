@@ -25,23 +25,19 @@ jobs:
       run: yarn install
     - name: Running Test
       run: npm run test-api
-#     - name: Get current date
-#       id: date
-#       run: echo "::set-output name=date::$(date +'%Y-%m-%d %H.%M')"
     - name: Get current time
       uses: josStorer/get-current-time@v2
       id: current-time
       with:
-        format: YYYYMMDD-HH
-        utcOffset: "+08:00"
+        format: YYYYMMDD-HH.MM
+        utcOffset: "+07:00"
     - name: Use current time
       env:
         F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
-      run: echo $F_TIME
+      run: echo Reports $F_TIME
     - name: Reporting
       if: always()
       uses: actions/upload-artifact@v2
       with:
-#         name: Reports ${{ steps.date.outputs.date }} (UTC)
         name: Reports ${{ steps.current-time.outputs.formattedTime }}
         path: reports
