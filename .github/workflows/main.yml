@@ -43,5 +43,5 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
 #         name: Reports ${{ steps.date.outputs.date }} (UTC)
-        name: Reports $F_TIME
+        name: Reports ${{ steps.current-time.outputs.formattedTime }}
         path: reports
