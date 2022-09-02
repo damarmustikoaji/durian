@@ -18,7 +18,6 @@ describe(`@cobaApi @get @getPingTest ${testCase.describe}`, () => {
 	describe(`${testCase.describePositive}`, () => {
 		it(`@get @getPing ${testCase.positive.getValid}`, async() => {
 			const response = await getPing();
-			console.log(response);
 			assert(response.status).to.equal(code.status.success.ok, response.body.message);
 			assert(response.body).to.be.jsonSchema(schema);
 			assert(response.body.status).to.equal(code.jsonStatus.success, response.body.message);
