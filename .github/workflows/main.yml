@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: cek
-      run: echo "$GITHUB_CONTEXT"
     - name: npm cache
       uses: actions/cache@v2
       with:
