@@ -16,13 +16,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: npm cache
-      uses: actions/cache@v2
+    - name: Run the build process with Docker
+      uses: addnab/docker-run-action@v3
       with:
-        path: '**/node_modules'
-        key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-    - name: Installing
-      run: yarn install
+        image: damarresin/kiwi:2022-09-14_0405
+#     - uses: actions/checkout@v2
+#     - name: npm cache
+#       uses: actions/cache@v2
+#       with:
+#         path: '**/node_modules'
+#         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+#     - name: Installing
+#       run: yarn install
     - name: Running Test
       run: npm run test-api
     - name: Get current time
