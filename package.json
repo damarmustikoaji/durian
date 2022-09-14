@@ -6,7 +6,8 @@
     "test": "tests"
   },
   "scripts": {
-    "test-api": "./node_modules/mocha/bin/mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 30000",
+    "test-api": "mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 30000",
+    "test-api1": "./node_modules/mocha/bin/mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 30000",
     "testrail-api": "./node_modules/mocha/bin/mocha ./tests --recursive --reporter testrail-mocha-reporter --reporter-options domain=damarcoba.testrail.io,username=dam4r@yahoo.com,password=P47vugafN7QlcJ/bHLLG,projectId=1,plandId=46,runId=47 --timeout 30000",
     "reports": "open 'reports/mochawesome.html'"
   },
