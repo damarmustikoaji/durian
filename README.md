@@ -49,7 +49,7 @@ $ cp .env.sample .env
     |        └── report.html
     ├── tests
     ├── .env
-    └── package.json
+    └── package.json 
 
 | Directory | Description                                                       |
 | --------- | ----------------------------------------------------------------- |
