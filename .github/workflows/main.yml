@@ -31,7 +31,7 @@ jobs:
     - name: Test
       run: pwd
     - name: Move test
-      run: sudo cp -r . /app/
+      run: sudo cp -r ./durian/. /app/
     - name: Test2
       run: pwd
     - name: Test3
