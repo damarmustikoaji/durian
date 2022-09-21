@@ -29,17 +29,13 @@ jobs:
 #     - name: Installing
 #       run: yarn install
     - name: Test
-      run: ls -a
-    - name: Move test
-      run: sudo cp -r . /app/
-    - name: Test2
-      run: pwd
-    - name: Test3
-      run: ls -a
-    - name: Move test
-      run: cd /app/
-    - name: Running Test
-      run: npm run test-api
+      run: |
+          ls -a
+          pwd
+          sudo cp -r . /app/
+          ls -a
+          pwd
+          npm run test-api
     - name: Get current time
       uses: josStorer/get-current-time@v2
       id: current-time
