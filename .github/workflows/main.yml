@@ -29,7 +29,7 @@ jobs:
 #     - name: Installing
 #       run: yarn install
     - name: Test
-      run: cd /durian
+      run: ls -a
     - name: Move test
       run: sudo cp -r . /app/
     - name: Test2
