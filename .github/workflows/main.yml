@@ -19,7 +19,7 @@ jobs:
     - name: Run the build process with Docker
       uses: addnab/docker-run-action@v3
       with:
-        image: damarresin/kiwi:latest
+        image: damarresin/kiwi:2022-09-21_1442
 #     - uses: actions/checkout@v2
 #     - name: npm cache
 #       uses: actions/cache@v2
