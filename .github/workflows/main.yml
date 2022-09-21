@@ -28,6 +28,11 @@ jobs:
 #         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 #     - name: Installing
 #       run: yarn install
+
+    - name: Test
+      run: pwd
+    - name: Test2
+      run: ls -a
     - name: Running Test
       run: npm run test-api
     - name: Get current time
