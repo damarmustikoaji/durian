@@ -31,7 +31,7 @@ jobs:
     - name: Test
       run: pwd
     - name: Move test
-      run: cp -r . /app/
+      run: cp . /app/
     - name: Test2
       run: pwd
     - name: Test3
