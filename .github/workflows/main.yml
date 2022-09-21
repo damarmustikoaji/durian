@@ -31,13 +31,13 @@ jobs:
     - name: Test
       run: pwd
     - name: Move test
-      run: cp -rf . /app/
+      run: sudo cp -f . /app/
     - name: Test2
       run: pwd
     - name: Test3
       run: ls -a
     - name: Move test
-      run: cd /app
+      run: cd /app/
     - name: Running Test
       run: npm run test-api
     - name: Get current time
