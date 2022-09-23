@@ -35,7 +35,7 @@ jobs:
           ls -a
           pwd
     - name: Test2
-      run: mocha ./tests
+      run: mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 30000
 #           sudo cp -r . /app/
 #           ls -a
 #           pwd
