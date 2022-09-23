@@ -34,6 +34,8 @@ jobs:
       run: |
           ls -a
           pwd
+    - name: Test2
+      run: mocha
 #           sudo cp -r . /app/
 #           ls -a
 #           pwd
