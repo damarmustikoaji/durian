@@ -40,7 +40,7 @@ jobs:
     - name: Run Test
       run: |
             cd /app/
-            mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 30000
+            npm run test-api
 #           sudo cp -r . /app/
 #           ls -a
 #           pwd
