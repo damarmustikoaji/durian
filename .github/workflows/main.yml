@@ -15,7 +15,7 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     container:
-      image: damarresin/kiwi:2022-09-26_0912
+      image: damarresin/kiwi:latest
     steps:
     - uses: actions/checkout@v2
 #     - name: Run the build process with Docker
