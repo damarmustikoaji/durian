@@ -15,7 +15,7 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     container:
-      image: damarresin/kiwi:2022-09-23_5552
+      image: damarresin/kiwi:2022-09-26_5306
     steps:
     - uses: actions/checkout@v2
 #     - name: Run the build process with Docker
@@ -30,12 +30,19 @@ jobs:
 #         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
 #     - name: Installing
 #       run: yarn install
-    - name: Test
+    - name: Mv Test
       run: |
-          ls -a
-          pwd
-    - name: Test2
-      run: mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 30000
+            mv ./api /app/
+            mv ./data /app/
+            mv ./helpers /app/
+            mv ./tests /app/
+            mv package.json /app/
+    - name: Run Test
+      run: |
+            cd /app/
+            npm run test-api
+#     - name: Test2
+#       run: mocha ./tests --recursive --reporter mochawesome --reporter-options reportDir=reports/ --timeout 30000
 #           sudo cp -r . /app/
 #           ls -a
 #           pwd
