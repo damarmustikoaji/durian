@@ -15,7 +15,7 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     container:
-      image: damarresin/kiwi:latest
+      image: damarresin/kiwi:2022-09-26_0912
     steps:
     - uses: actions/checkout@v2
 #     - name: Run the build process with Docker
@@ -45,19 +45,19 @@ jobs:
 #           ls -a
 #           pwd
 #           npm run test-api
-#     - name: Get current time
-#       uses: josStorer/get-current-time@v2
-#       id: current-time
-#       with:
-#         format: YYYYMMDD-HH.MM
-#         utcOffset: "+07:00"
-#     - name: Use current time
-#       env:
-#         F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
-#       run: echo Reports $F_TIME
-#     - name: Reporting
-#       if: always()
-#       uses: actions/upload-artifact@v2
-#       with:
-#         name: Reports ${{ steps.current-time.outputs.formattedTime }}
-#         path: reports
+    - name: Get current time
+      uses: josStorer/get-current-time@v2
+      id: current-time
+      with:
+        format: YYYYMMDD-HH.MM
+        utcOffset: "+07:00"
+    - name: Use current time
+      env:
+        F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
+      run: echo Reports $F_TIME
+    - name: Reporting
+      if: always()
+      uses: actions/upload-artifact@v2
+      with:
+        name: Reports ${{ steps.current-time.outputs.formattedTime }}
+        path: reports
