@@ -18,19 +18,7 @@ jobs:
       image: damarresin/kiwi:2022-09-26_0912
     steps:
     - uses: actions/checkout@v2
-#     - name: Run the build process with Docker
-#       uses: addnab/docker-run-action@v3
-#       with:
-#         image: damarresin/kiwi:2022-09-21_1659
-#     - uses: actions/checkout@v2
-#     - name: npm cache
-#       uses: actions/cache@v2
-#       with:
-#         path: '**/node_modules'
-#         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-#     - name: Installing
-#       run: yarn install
-    - name: Mv Test
+    - name: Preparation Test
       run: |
             mv ./api /app/
             mv ./data /app/
@@ -41,17 +29,13 @@ jobs:
       run: |
             cd /app/
             npm run test-api
-#           sudo cp -r . /app/
-#           ls -a
-#           pwd
-#           npm run test-api
-    - name: Get current time
+    - name: Get Current Time
       uses: josStorer/get-current-time@v2
       id: current-time
       with:
         format: YYYYMMDD-HH.MM
         utcOffset: "+07:00"
-    - name: Use current time
+    - name: Use Current Time
       env:
         F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
       run: echo Reports $F_TIME
