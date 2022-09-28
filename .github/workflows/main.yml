@@ -15,19 +15,19 @@ jobs:
   testing:
     runs-on: ubuntu-latest
     container:
-      image: damarresin/kiwi:2022-09-26_0912
+      image: damarresin/kiwi:2022-09-28_4846
     steps:
     - uses: actions/checkout@v2
     - name: Preparation Test
       run: |
-            mv ./api /app/
-            mv ./data /app/
-            mv ./helpers /app/
-            mv ./tests /app/
-            mv package.json /app/
+            mv ./api /sdet/
+            mv ./data /sdet/
+            mv ./helpers /sdet/
+            mv ./tests /sdet/
+            mv package.json /sdet/
     - name: Run Test
       run: |
-            cd /app/
+            cd /sdet/
             npm run test-api
     - name: Get Current Time
       uses: josStorer/get-current-time@v2
@@ -44,4 +44,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: Reports ${{ steps.current-time.outputs.formattedTime }}
-        path: /app/reports
+        path: /sdet/reports
