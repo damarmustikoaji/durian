@@ -1,6 +1,6 @@
 [![Automation Testing](https://github.com/damarmustikoaji/durian/actions/workflows/main.yml/badge.svg?branch=master)](https://github.com/damarmustikoaji/durian/actions/workflows/main.yml)![mochai](https://img.shields.io/badge/Mocha-Chai-yellowgreen.svg)
 
-# Boilerplate API Automation Testing 
+# Boilerplate API Automation Testing
 
 ### Mocha
 
