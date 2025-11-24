@@ -16,32 +16,38 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: damarresin/kiwi:2022-09-28_4846
+
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
+
     - name: Preparation Test
       run: |
-            mv ./api /sdet/
-            mv ./data /sdet/
-            mv ./helpers /sdet/
-            mv ./tests /sdet/
-            mv package.json /sdet/
+        mv ./api /sdet/
+        mv ./data /sdet/
+        mv ./helpers /sdet/
+        mv ./tests /sdet/
+        mv package.json /sdet/
+
     - name: Run Test
       run: |
-            cd /sdet/
-            npm run test-api
+        cd /sdet/
+        npm run test-api
+
     - name: Get Current Time
       uses: josStorer/get-current-time@v2
       id: current-time
       with:
         format: YYYYMMDD-HH.MM
         utcOffset: "+07:00"
+
     - name: Use Current Time
       env:
         F_TIME: "${{ steps.current-time.outputs.formattedTime }}"
       run: echo Reports $F_TIME
+
     - name: Reporting
       if: always()
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
-        name: Reports ${{ steps.current-time.outputs.formattedTime }}
+        name: "Reports-${{ steps.current-time.outputs.formattedTime }}"
         path: /sdet/reports
